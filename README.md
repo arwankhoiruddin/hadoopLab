@@ -43,7 +43,7 @@ Then install it using the following command
 sudo apt install default-jre
 ```
 
-## Download Hadoop
+## Download and Install Hadoop
 
 ### Run this in command
 
@@ -57,3 +57,43 @@ curl -o hadoop-3.2.2.tar.gz https://downloads.apache.org/hadoop/common/hadoop-3.
 tar xvfz hadoop-3.2.2.tar.gz
 ```
 
+### Set JAVA_HOME
+
+Find where java is installed
+
+``` 
+which java
+```
+You may find it produce the following path
+
+```
+/usr/bin/java
+```
+
+Now set the JAVA_HOME in Hadoop setting to where java is installed
+
+```
+nano hadoop-3.2.2/etc/hadoop/hadoop-env.sh
+```
+
+Press CTRL+W to find this line `export JAVA_HOME`. Remove the comment (#) in that line, then add the java path. So it will become like this
+
+```
+export JAVA_HOME=/usr
+```
+
+Notice that we don't include the `/bin/java` path when we run `which java` command
+
+### Check If Hadoop is installed
+
+```
+./bin/hadoop
+```
+
+If you can run it, then you have your Hadoop in a local (standalone) mode.
+
+Congratulations!
+
+This concludes our lab tonight
+
+See you tomorrow :D

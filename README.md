@@ -40,7 +40,7 @@ Ask your administrator to install one of them.
 Then install it using the following command
 
 ```
-sudo apt install default-jre
+sudo apt-get install default-jre
 ```
 
 ## Download and Install Hadoop
